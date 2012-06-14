@@ -1,4 +1,28 @@
 #{extends 'main.html' /}
 #{set title:'Home' /}
 
-#{welcome /}
+<div id="header">
+<h1>Diva Calendars</h1>
+</div>
+
+<div id="Calendar">
+  <table>
+    <thead>
+      <tr>
+        <th>カテゴリ</th>
+        <th>名前</th>
+      </tr>
+    </thead>
+    <tbody>
+      #{list calendars, as: 'calendar'}
+      <tr>
+        <td>${calendar.category}</td>
+        <td><a href="${calendar.url}" target="_balnk">
+              ${calendar.name}
+        </a></td>
+      </tr>
+      #{/list}
+    </tbody>
+  </table>
+  <a href="@{Application.excel()}">excel</a>
+</div>
