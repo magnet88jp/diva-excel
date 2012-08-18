@@ -13,6 +13,7 @@ public class Application extends Controller {
     public static void index() {
         List<DivaCalendar> calendars = 
             DivaCalendar.find("order by category").fetch();
+        Logger.info("test at wired cafe");
         render(calendars);
     }
 
